@@ -1,0 +1,21 @@
+# Template file for 'famedly-openpgp-scripts'
+pkgname=famedly-openpgp-scripts
+version=20240304
+revision=1
+_commit=618b816a133a780dc2909ca883364e27ccb3a3e6
+depends="openpgp-ca openpgp-card-tools sequoia-sq rusty-diceware jq bash coreutils"
+short_desc="Famedly OpenPGP scripts"
+maintainer="Jan Christian Grünhage <jan.christian@gruenhage.xyz>"
+license="AGPL-3.0-or-later"
+homepage="https://github.com/famedly/openpgp-scripts"
+distfiles="https://github.com/famedly/openpgp-scripts/archive/${_commit}.tar.gz"
+checksum=e1fd5f712e032fe110e37ba4f49acae6fe8246d937868e5330a2f03d047477fe
+
+do_install() {
+	vbin fos-export
+	vbin fos-mount
+	vbin fos-new
+	vbin fos-part-id
+	vbin fos-partitions
+	vdoc README.md
+}
